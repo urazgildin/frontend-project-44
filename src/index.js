@@ -1,22 +1,5 @@
 import readlineSync from 'readline-sync';
 
-// Генератор случайных чисел (от 0 до 100)
-
-const randomNumberGenerator = () => {
-  const randomNumber = Math.random() * 100;
-  const roundedRandomNumber = Math.round(randomNumber);
-  return roundedRandomNumber;
-};
-
-// Генератор случайных операторов (+, -, *)
-
-const randomOperatorGenerator = () => {
-  const arr = ['+', '-', '*'];
-  const randomElement = Math.floor(Math.random() * (arr.length - 1));
-  const randomOperator = arr[randomElement];
-  return randomOperator;
-};
-
 // Приветсвие
 
 const greeting = () => {
@@ -46,7 +29,20 @@ const congratulations = (userName) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export {
-  randomNumberGenerator, randomOperatorGenerator, greeting, askQuestionGetAnswer,
-  printYouLose, congratulations,
+const gamesEngine = (rules, expressionRightAnswer) => {
+  const userName = greeting();
+  console.log(rules);
+  for (let i = 0; i < 3; i += 1) {
+    const getExpressionRightAnswer = expressionRightAnswer();
+    const expression = getExpressionRightAnswer[0];
+    const rightAnswer = getExpressionRightAnswer[1];
+    const userAnswer = askQuestionGetAnswer(expression);
+    if (rightAnswer !== userAnswer) {
+      printYouLose(userAnswer, rightAnswer, userName);
+      return;
+    } console.log('Correct!');
+  }
+  congratulations(userName);
 };
+
+export default gamesEngine;
