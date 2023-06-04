@@ -4,3 +4,4 @@
 
 https://asciinema.org/a/yjcciqsVuo1l7pLMD0HUJ6z57   Brain-even
 https://asciinema.org/a/qLyjdOat1FvVPAJOvQUkvOfuo   Brain-calc
+https://asciinema.org/a/SQMkDR2YBtvRphPyIXiUr5HwY   Brain-gcd
