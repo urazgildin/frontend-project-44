@@ -1,5 +1,17 @@
 import gamesEngine from '../index.js';
-import { randomNumberGenerator, ifSimple } from '../utils.js';
+import randomNumberGenerator from '../utils.js';
+
+const ifSimple = (number) => {
+  if (number < 2) {
+    return false;
+  }
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 
 const findDevider = (number1, number2) => {
   const max = Math.max(number1, number2);
