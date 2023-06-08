@@ -20,7 +20,7 @@ const askQuestionGetAnswer = (expression) => {
 // Вывод оповещения о проигрыше
 
 const printYouLose = (userAnswer, rightAnswer, userName) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}`);
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.\nLet's try again, ${userName}!`);
 };
 
 // Поздравления
