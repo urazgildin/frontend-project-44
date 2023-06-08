@@ -1,23 +1,17 @@
 import gamesEngine from '../index.js';
 import randomNumberGenerator from '../utils.js';
 
-const randomStepGenerator = () => {
-  const randomNumber = Math.random() * 10;
-  const roundedRandomNumber = Math.round(randomNumber);
-  return roundedRandomNumber;
-};
-
 const expressionRightAnswer = () => {
   const firstElement = randomNumberGenerator();
-  const oneStep = randomStepGenerator();
+  const oneStep = Math.round(Math.random() * 10);
   const arr = [firstElement];
   for (let i = 0; i < 9; i += 1) {
     const lastOne = arr.at(-1);
     arr.push(lastOne + oneStep);
   }
-  const randomItem = randomStepGenerator() - 1;
-  const rightAnswer = arr[randomItem].toString();
-  arr[randomItem] = '..';
+  const randomElement = Math.floor(Math.random() * (arr.length));
+  const rightAnswer = arr[randomElement].toString();
+  arr[randomElement] = '..';
   const expression = arr.join(' ');
   return [expression, rightAnswer];
 };

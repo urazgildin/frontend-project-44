@@ -13,9 +13,10 @@ const expressionRightAnswer = () => {
     return [expression, rightAnswer];
   }
   while (sortedArr[1] % sortedArr[0] !== 0) {
-    const remainder = sortedArr[1] % sortedArr[0];
-    sortedArr[1] = sortedArr[0];
-    sortedArr[0] = remainder;
+    const newMin = sortedArr[1] % sortedArr[0];
+    const newMax = sortedArr[0];
+    sortedArr[1] = newMax;
+    sortedArr[0] = newMin;
   }
   rightAnswer = sortedArr[0].toString();
   return [expression, rightAnswer];
