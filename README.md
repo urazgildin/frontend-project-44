@@ -18,17 +18,19 @@ make **npm install brain-games**
 ### Start
 make **game name**
 
-#### Brain-even:
+### Examples of each game:
+
+##### Brain-even
 <a href="https://asciinema.org/a/yjcciqsVuo1l7pLMD0HUJ6z57" target="_blank"><img src="https://asciinema.org/a/yjcciqsVuo1l7pLMD0HUJ6z57.svg" /></a>
 
-#### Brain-calc:
+##### Brain-calc
 <a href="https://asciinema.org/a/qLyjdOat1FvVPAJOvQUkvOfuo" target="_blank"><img src="https://asciinema.org/a/qLyjdOat1FvVPAJOvQUkvOfuo.svg" /></a>
 
-#### Brain-gcd:
+##### Brain-gcd
 <a href="https://asciinema.org/a/SQMkDR2YBtvRphPyIXiUr5HwY" target="_blank"><img src="https://asciinema.org/a/SQMkDR2YBtvRphPyIXiUr5HwY.svg" /></a>
 
-#### Brain-progression:
+##### Brain-progression
 <a href="https://asciinema.org/a/UElET1Hz8mLVnko2zonH3j0QR" target="_blank"><img src="https://asciinema.org/a/UElET1Hz8mLVnko2zonH3j0QR.svg" /></a>
 
-#### Brain-prime:
+##### Brain-prime
 <a href="https://asciinema.org/a/vNHX0Ook1gRgYfR5epyONxw88" target="_blank"><img src="https://asciinema.org/a/vNHX0Ook1gRgYfR5epyONxw88.svg" /></a>
