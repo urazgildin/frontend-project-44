@@ -1,21 +1,27 @@
 import gamesEngine from '../index.js';
 import randomNumberGenerator from '../utils.js';
 
-const expressionRightAnswer = () => {
-  const expression = `${randomNumberGenerator()}`;
-  let result;
-  if (expression < 2) {
-    result = 'no';
-    return [expression, result];
+const isPrime = (number) => {
+  if (number < 2) {
+    return false;
   }
-  for (let i = 2; i <= expression / 2; i += 1) {
-    if (expression % i === 0) {
-      result = 'no';
-      return [expression, result];
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0) {
+      return false;
     }
   }
-  result = 'yes';
-  return [expression, result];
+  return true;
+};
+
+const expressionRightAnswer = () => {
+  const expression = `${randomNumberGenerator(0, 100)}`;
+  let rightAnswer;
+  if (isPrime(expression)) {
+    rightAnswer = 'yes';
+  } else {
+    rightAnswer = 'no';
+  }
+  return [expression, rightAnswer];
 };
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';

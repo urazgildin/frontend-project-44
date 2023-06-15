@@ -1,15 +1,16 @@
 import gamesEngine from '../index.js';
 import randomNumberGenerator from '../utils.js';
 
-const IsEven = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
-  } return 'no';
-};
+const isEven = (number) => number % 2 === 0;
 
 const expressionRightAnswer = () => {
-  const expression = `${randomNumberGenerator()}`;
-  const rightAnswer = IsEven(expression);
+  const expression = `${randomNumberGenerator(0, 100)}`;
+  let rightAnswer;
+  if (isEven(expression)) {
+    rightAnswer = 'yes';
+  } else {
+    rightAnswer = 'no';
+  }
   return [expression, rightAnswer];
 };
 

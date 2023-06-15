@@ -1,7 +1,5 @@
-// Генератор случайных чисел (от 0 до 100)
-
-const randomNumberGenerator = () => {
-  const randomNumber = Math.random() * 100;
+const randomNumberGenerator = (min, max) => {
+  const randomNumber = Math.random() * (max - min) + min;
   const roundedRandomNumber = Math.round(randomNumber);
   return roundedRandomNumber;
 };

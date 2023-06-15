@@ -1,24 +1,24 @@
 import gamesEngine from '../index.js';
 import randomNumberGenerator from '../utils.js';
 
+const gcdFinder = (number1, number2) => {
+  let a = number1;
+  let b = number2;
+  while (a !== 0 && b !== 0) {
+    if (a > b) {
+      a %= b;
+    } else {
+      b %= a;
+    }
+  }
+  return (a + b);
+};
+
 const expressionRightAnswer = () => {
-  const arr = [randomNumberGenerator(), randomNumberGenerator()];
-  const expression = `${arr[0]} ${arr[1]}`;
-  const sortedArr = arr.sort((a, b) => a - b);
-  const min = sortedArr[0];
-  const max = sortedArr[1];
-  let rightAnswer;
-  if (min === 0) {
-    rightAnswer = max.toString();
-    return [expression, rightAnswer];
-  }
-  while (sortedArr[1] % sortedArr[0] !== 0) {
-    const newMin = sortedArr[1] % sortedArr[0];
-    const newMax = sortedArr[0];
-    sortedArr[1] = newMax;
-    sortedArr[0] = newMin;
-  }
-  rightAnswer = sortedArr[0].toString();
+  const number1 = randomNumberGenerator(0, 100);
+  const number2 = randomNumberGenerator(0, 100);
+  const expression = `${number1} ${number2}`;
+  const rightAnswer = gcdFinder(number1, number2).toString();
   return [expression, rightAnswer];
 };
 
