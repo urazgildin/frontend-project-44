@@ -10,12 +10,12 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "type": "module",
-  "description": "[![Actions Status](https://github.com/urazgildin/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/urazgildin/frontend-project-44/actions)",
+  "description": "five different brain-games",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Urazgildin Anton",
   "license": "ISC",
   "dependencies": {
     "readline-sync": "^1.4.10"

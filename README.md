@@ -13,11 +13,13 @@ This project is created as a first project within educational course of frontend
 Node.js v20.1.0
 
 ### Setup
-make **npm install brain-games**
-
+```bash
+$ npm install brain-games
+```
 ### Start
-make **game name**
-
+```bash
+$ game name
+```
 ### Examples of each game:
 
 ##### Brain-even
