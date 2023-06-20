@@ -1,10 +1,10 @@
-import gamesEngine from '../index.js';
-import randomNumberGenerator from '../utils.js';
+import launchGames from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isEven = (number) => number % 2 === 0;
 
-const expressionRightAnswer = () => {
-  const expression = `${randomNumberGenerator(0, 100)}`;
+const getExpressionRightAnswer = () => {
+  const expression = `${getRandomNumber(0, 100)}`;
   let rightAnswer;
   if (isEven(expression)) {
     rightAnswer = 'yes';
@@ -17,7 +17,7 @@ const expressionRightAnswer = () => {
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const brainEven = () => {
-  gamesEngine(rules, expressionRightAnswer);
+  launchGames(rules, getExpressionRightAnswer);
 };
 
 export default brainEven;

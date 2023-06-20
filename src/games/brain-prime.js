@@ -1,5 +1,5 @@
-import gamesEngine from '../index.js';
-import randomNumberGenerator from '../utils.js';
+import launchGames from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const isPrime = (number) => {
   if (number < 2) {
@@ -13,8 +13,8 @@ const isPrime = (number) => {
   return true;
 };
 
-const expressionRightAnswer = () => {
-  const expression = `${randomNumberGenerator(0, 100)}`;
+const getExpressionRightAnswer = () => {
+  const expression = `${getRandomNumber(0, 100)}`;
   let rightAnswer;
   if (isPrime(expression)) {
     rightAnswer = 'yes';
@@ -27,7 +27,7 @@ const expressionRightAnswer = () => {
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const brainPrime = () => {
-  gamesEngine(rules, expressionRightAnswer);
+  launchGames(rules, getExpressionRightAnswer);
 };
 
 export default brainPrime;

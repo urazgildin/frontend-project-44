@@ -1,5 +1,5 @@
-import gamesEngine from '../index.js';
-import randomNumberGenerator from '../utils.js';
+import launchGames from '../index.js';
+import getRandomNumber from '../utils.js';
 
 const calculateExpression = (operand1, operand2, operator) => {
   let rightAnswer;
@@ -16,12 +16,12 @@ const calculateExpression = (operand1, operand2, operator) => {
   return rightAnswer;
 };
 
-const expressionRightAnswer = () => {
+const getExpressionRightAnswer = () => {
   const arr = ['+', '-', '*'];
   const randomElement = Math.floor(Math.random() * (arr.length));
   const operator = arr[randomElement];
-  const operand1 = randomNumberGenerator(0, 20);
-  const operand2 = randomNumberGenerator(0, 20);
+  const operand1 = getRandomNumber(0, 20);
+  const operand2 = getRandomNumber(0, 20);
   const expression = `${operand1} ${operator} ${operand2}`;
   const rightAnswer = calculateExpression(operand1, operand2, operator);
   return [expression, rightAnswer];
@@ -30,7 +30,7 @@ const expressionRightAnswer = () => {
 const rules = 'What is the result of the expression?';
 
 const brainCalc = () => {
-  gamesEngine(rules, expressionRightAnswer);
+  launchGames(rules, getExpressionRightAnswer);
 };
 
 export default brainCalc;

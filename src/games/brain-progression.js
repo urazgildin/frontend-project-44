@@ -1,9 +1,9 @@
-import gamesEngine from '../index.js';
-import randomNumberGenerator from '../utils.js';
+import launchGames from '../index.js';
+import getRandomNumber from '../utils.js';
 
-const progressionGenerator = () => {
-  const firstElement = randomNumberGenerator(0, 100);
-  const oneStep = randomNumberGenerator(2, 10);
+const generateProgression = () => {
+  const firstElement = getRandomNumber(0, 100);
+  const oneStep = getRandomNumber(2, 10);
   const arr = [firstElement];
   for (let i = 0; i < 9; i += 1) {
     const lastOne = arr.at(-1);
@@ -12,8 +12,8 @@ const progressionGenerator = () => {
   return arr;
 };
 
-const expressionRightAnswer = () => {
-  const arr = progressionGenerator();
+const getExpressionRightAnswer = () => {
+  const arr = generateProgression();
   const randomElement = Math.floor(Math.random() * (arr.length));
   const rightAnswer = arr[randomElement].toString();
   arr[randomElement] = '..';
@@ -24,7 +24,7 @@ const expressionRightAnswer = () => {
 const rules = 'What number is missing in the progression?';
 
 const brainProgression = () => {
-  gamesEngine(rules, expressionRightAnswer);
+  launchGames(rules, getExpressionRightAnswer);
 };
 
 export default brainProgression;
