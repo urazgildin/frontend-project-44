@@ -5,12 +5,7 @@ const isEven = (number) => number % 2 === 0;
 
 const getExpressionRightAnswer = () => {
   const expression = `${getRandomNumber(0, 100)}`;
-  let rightAnswer;
-  if (isEven(expression)) {
-    rightAnswer = 'yes';
-  } else {
-    rightAnswer = 'no';
-  }
+  const rightAnswer = isEven(expression) ? 'yes' : 'no';
   return [expression, rightAnswer];
 };
 

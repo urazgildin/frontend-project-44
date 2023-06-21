@@ -1,20 +1,20 @@
 import launchGames from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const generateProgression = () => {
-  const firstElement = getRandomNumber(0, 100);
-  const oneStep = getRandomNumber(2, 10);
-  const arr = [firstElement];
-  for (let i = 0; i < 9; i += 1) {
-    const lastOne = arr.at(-1);
-    arr.push(lastOne + oneStep);
+const progressionLength = 10;
+
+const generateProgression = (start, step) => {
+  const arr = [];
+  for (let i = 0; i < progressionLength; i += 1) {
+    const element = start + i * step;
+    arr.push(element);
   }
   return arr;
 };
 
 const getExpressionRightAnswer = () => {
-  const arr = generateProgression();
-  const randomElement = Math.floor(Math.random() * (arr.length));
+  const arr = generateProgression(getRandomNumber(0, 100), getRandomNumber(2, 10));
+  const randomElement = getRandomNumber(0, arr.length - 1);
   const rightAnswer = arr[randomElement].toString();
   arr[randomElement] = '..';
   const expression = arr.join(' ');

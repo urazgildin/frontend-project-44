@@ -5,7 +5,7 @@ const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
-  for (let i = 2; i <= number / 2; i += 1) {
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
     if (number % i === 0) {
       return false;
     }
@@ -15,12 +15,7 @@ const isPrime = (number) => {
 
 const getExpressionRightAnswer = () => {
   const expression = `${getRandomNumber(0, 100)}`;
-  let rightAnswer;
-  if (isPrime(expression)) {
-    rightAnswer = 'yes';
-  } else {
-    rightAnswer = 'no';
-  }
+  const rightAnswer = isPrime(expression) ? 'yes' : 'no';
   return [expression, rightAnswer];
 };
 

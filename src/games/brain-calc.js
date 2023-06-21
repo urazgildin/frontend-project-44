@@ -2,23 +2,21 @@ import launchGames from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const calculateExpression = (operand1, operand2, operator) => {
-  let rightAnswer;
   switch (operator) {
     case '+':
-      rightAnswer = (operand1 + operand2).toString();
-      break;
+      return (operand1 + operand2).toString();
     case '-':
-      rightAnswer = (operand1 - operand2).toString();
-      break;
+      return (operand1 - operand2).toString();
+    case '*':
+      return (operand1 * operand2).toString();
     default:
-      rightAnswer = (operand1 * operand2).toString();
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
-  return rightAnswer;
 };
 
 const getExpressionRightAnswer = () => {
   const arr = ['+', '-', '*'];
-  const randomElement = Math.floor(Math.random() * (arr.length));
+  const randomElement = getRandomNumber(0, arr.length - 1);
   const operator = arr[randomElement];
   const operand1 = getRandomNumber(0, 20);
   const operand2 = getRandomNumber(0, 20);
