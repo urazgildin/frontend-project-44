@@ -12,19 +12,21 @@ const generateProgression = (start, step) => {
   return arr;
 };
 
-const getExpressionRightAnswer = () => {
-  const arr = generateProgression(getRandomNumber(0, 100), getRandomNumber(2, 10));
-  const randomElement = getRandomNumber(0, arr.length - 1);
-  const rightAnswer = arr[randomElement].toString();
-  arr[randomElement] = '..';
-  const expression = arr.join(' ');
-  return [expression, rightAnswer];
+const getRoundData = () => {
+  const start = getRandomNumber(0, 100);
+  const step = getRandomNumber(2, 10);
+  const progression = generateProgression(start, step);
+  const randomElement = getRandomNumber(0, progression.length - 1);
+  const rightAnswer = progression[randomElement].toString();
+  progression[randomElement] = '..';
+  const progressionWithGap = progression.join(' ');
+  return [progressionWithGap, rightAnswer];
 };
 
 const rules = 'What number is missing in the progression?';
 
 const brainProgression = () => {
-  launchGames(rules, getExpressionRightAnswer);
+  launchGames(rules, getRoundData);
 };
 
 export default brainProgression;

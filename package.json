@@ -10,7 +10,7 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "type": "module",
-  "description": "five different brain-games",
+  "description": "five games to warm up brain",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

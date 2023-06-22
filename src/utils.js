@@ -1,7 +1,3 @@
-const randomNumberGenerator = (min, max) => {
-  const randomNumber = Math.random() * (max - min) + min;
-  const roundedRandomNumber = Math.round(randomNumber);
-  return roundedRandomNumber;
-};
+const getRandomNumber = (min, max) => Math.round(Math.random() * (max - min) + min);
 
-export default randomNumberGenerator;
+export default getRandomNumber;

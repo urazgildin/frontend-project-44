@@ -14,18 +14,18 @@ const findGcd = (number1, number2) => {
   return (a + b);
 };
 
-const getExpressionRightAnswer = () => {
+const getRoundData = () => {
   const number1 = getRandomNumber(0, 100);
   const number2 = getRandomNumber(0, 100);
-  const expression = `${number1} ${number2}`;
+  const numbers = `${number1} ${number2}`;
   const rightAnswer = findGcd(number1, number2).toString();
-  return [expression, rightAnswer];
+  return [numbers, rightAnswer];
 };
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
 const brainGcd = () => {
-  launchGames(rules, getExpressionRightAnswer);
+  launchGames(rules, getRoundData);
 };
 
 export default brainGcd;

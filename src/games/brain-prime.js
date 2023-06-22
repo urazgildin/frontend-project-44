@@ -13,16 +13,16 @@ const isPrime = (number) => {
   return true;
 };
 
-const getExpressionRightAnswer = () => {
-  const expression = `${getRandomNumber(0, 100)}`;
-  const rightAnswer = isPrime(expression) ? 'yes' : 'no';
-  return [expression, rightAnswer];
+const getRoundData = () => {
+  const number = getRandomNumber(0, 100);
+  const rightAnswer = isPrime(number) ? 'yes' : 'no';
+  return [number.toString(), rightAnswer];
 };
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const brainPrime = () => {
-  launchGames(rules, getExpressionRightAnswer);
+  launchGames(rules, getRoundData);
 };
 
 export default brainPrime;
