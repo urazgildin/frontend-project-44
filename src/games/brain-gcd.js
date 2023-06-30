@@ -17,15 +17,15 @@ const findGcd = (number1, number2) => {
 const getRoundData = () => {
   const number1 = getRandomNumber(0, 100);
   const number2 = getRandomNumber(0, 100);
-  const numbers = `${number1} ${number2}`;
+  const roundQuestion = `${number1} ${number2}`;
   const rightAnswer = findGcd(number1, number2).toString();
-  return [numbers, rightAnswer];
+  return [roundQuestion, rightAnswer];
 };
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
-const brainGcd = () => {
+const runBrainGcd = () => {
   launchGames(rules, getRoundData);
 };
 
-export default brainGcd;
+export default runBrainGcd;

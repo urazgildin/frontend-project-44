@@ -27,8 +27,8 @@ const getRoundData = () => {
 
 const rules = 'What is the result of the expression?';
 
-const brainCalc = () => {
+const runBrainCalc = () => {
   launchGames(rules, getRoundData);
 };
 
-export default brainCalc;
+export default runBrainCalc;

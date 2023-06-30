@@ -25,8 +25,8 @@ const getRoundData = () => {
 
 const rules = 'What number is missing in the progression?';
 
-const brainProgression = () => {
+const runBrainProgression = () => {
   launchGames(rules, getRoundData);
 };
 
-export default brainProgression;
+export default runBrainProgression;

@@ -14,15 +14,15 @@ const isPrime = (number) => {
 };
 
 const getRoundData = () => {
-  const number = getRandomNumber(0, 100);
-  const rightAnswer = isPrime(number) ? 'yes' : 'no';
-  return [number.toString(), rightAnswer];
+  const roundQuestion = getRandomNumber(0, 100);
+  const rightAnswer = isPrime(roundQuestion) ? 'yes' : 'no';
+  return [roundQuestion.toString(), rightAnswer];
 };
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const brainPrime = () => {
+const runBrainPrime = () => {
   launchGames(rules, getRoundData);
 };
 
-export default brainPrime;
+export default runBrainPrime;
